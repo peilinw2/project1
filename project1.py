@@ -13,7 +13,7 @@ SelectionSort
 The function is the implementation of the Selection sorting algorithm.
 The function sorts an array in an ascending order.
 Inputs: listToSort ( a list of numbers)
-Outpus: a list of sorted numbers
+Outpus: listTosort (a list of sorted numbers)
 """
 def SelectionSort(listToSort):
     #Iterate over the index of the listToSort
@@ -29,6 +29,10 @@ def SelectionSort(listToSort):
 
 """
 InsertionSort
+The function is the implementation of the Insertion sorting algorithm.
+The function sorts an array in an ascending order.
+Inputs: listToSort ( a list of numbers)
+Outpus: listTosort (a list of sorted numbers)
 """
 def InsertionSort(listToSort):
     for i in range(1, len(listToSort)):
@@ -46,16 +50,24 @@ def InsertionSort(listToSort):
 
 """
 BubbleSort
+The function is the implementation of the Bubble sorting algorithm.
+The function sorts an array in an ascending order.
+Inputs: listToSort ( a list of numbers)
+Outpus: listTosort (a list of sorted numbers)
 """
 def BubbleSort(listToSort):
+    #Iterate through th listToSort and compare every two adjacent elements
     for i in range(len(listToSort)-1):
         swapped = False
+	# The last i elements are in place
         for j in range(len(listToSort)-1-i):
+	#If the elements are out of order, swap them
             if listToSort[j] > listToSort[j+1]:
                 x = listToSort[j]
                 listToSort[j] = listToSort[j+1]
                 listToSort[j+1] = x
                 swapped = True
+	# Repeat until no more swaps are made,and all elements are are 
         if not swapped:
             return listToSort
 
