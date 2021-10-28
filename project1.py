@@ -10,9 +10,15 @@ Date:
 
 """
 SelectionSort
+The function is the implementation of the Selection sorting algorithm.
+The function sorts an array in an ascending order.
+Inputs: listToSort ( a list of numbers)
+Outpus: a list of sorted numbers
 """
 def SelectionSort(listToSort):
+    #Iterate over the index of the listToSort
     for i in range(len(listToSort)-1):
+	#select the first unsorted numer 
         min_index = i
         for j in range(i+1, len(listToSort)):
             if listToSort[j] < listToSort[min_index]:
