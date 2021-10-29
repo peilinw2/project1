@@ -5,39 +5,50 @@ Fall 2021
 
 Partner 1: Amy Wang (pw137)
 Partner 2: Lu Liu (ll394)
-Date:
+Date: October 29th, 2021
 """
 
 """
 SelectionSort
 The function is the implementation of the Selection sorting algorithm.
-The function sorts an array in an ascending order.
+The function sorts an array in an ascending order by selecting the smallest element
+from the unsorted array and moving it to the front of th array.
 Inputs: listToSort ( a list of numbers)
 Outpus: listTosort (a list of sorted numbers)
 """
+
 def SelectionSort(listToSort):
-    #Iterate over the index of the listToSort
+    #Iterate over the index of the list
     for i in range(len(listToSort)-1):
-	#select the first unsorted numer 
+	#Select the first unsorted number as the minimum
         min_index = i
+	#Check the element to be the minimum
         for j in range(i+1, len(listToSort)):
             if listToSort[j] < listToSort[min_index]:
                 min_index = j
+	#Swap the minimum element with the current element
         if i != min_index:
             listToSort[i], listToSort[min_index] = listToSort[min_index], listToSort[i]
     return listToSort
 
+
 """
 InsertionSort
 The function is the implementation of the Insertion sorting algorithm.
-The function sorts an array in an ascending order.
+The function sorts an array in an ascending order by separating the array into the sorted
+and unsorted component, iteratively inserting the elements into the sorted component to make sure
+that the left-side elements are smaller than the right-side elements.
 Inputs: listToSort ( a list of numbers)
 Outpus: listTosort (a list of sorted numbers)
 """
+
 def InsertionSort(listToSort):
+    #Traverse through the list
     for i in range(1, len(listToSort)):
         value = listToSort[i]
+	#Move elements of the list and compare the element in front of it with the current element
         i = i - 1
+	#Swap them if the preceding element is larger than the current element
         while i >= 0:
             if value < listToSort[i]:
                 listToSort[i + 1] = listToSort[i]
@@ -51,12 +62,14 @@ def InsertionSort(listToSort):
 """
 BubbleSort
 The function is the implementation of the Bubble sorting algorithm.
-The function sorts an array in an ascending order.
+The function sorts an array in an ascending order by repeatedly comparing two adjacent elements if 
+they are in wrong order and swap them.
 Inputs: listToSort ( a list of numbers)
 Outpus: listTosort (a list of sorted numbers)
 """
+
 def BubbleSort(listToSort):
-    #Iterate through th listToSort and compare every two adjacent elements
+    #Iterate through the list and compare every two adjacent elements
     for i in range(len(listToSort)-1):
         swapped = False
 	# The last i elements are in place
@@ -67,7 +80,7 @@ def BubbleSort(listToSort):
                 listToSort[j] = listToSort[j+1]
                 listToSort[j+1] = x
                 swapped = True
-	# Repeat until no more swaps are made,and all elements are are 
+	# Repeat until no more swaps are made and we can make sure that all elemets are sorted
         if not swapped:
             return listToSort
 
