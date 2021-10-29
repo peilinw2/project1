@@ -86,17 +86,24 @@ def BubbleSort(listToSort):
 
 """
 MergeSort
+The function is the implementation of the Merge sorting algorithm.
+The function does the divide and conquer algorithm by breaking down problem into multiple subproblems
+recursively until they are sorted and then combined to solve original problem.
+Inputs: listToSort 
+Outputs:listToSort 
+
 """
 def MergeSort(listToSort):
     if len(listToSort) > 1:
         mid = len(listToSort)//2
         left = listToSort[:mid]
         right = listToSort[mid:]
-
+# recursion
         MergeSort(left)
         MergeSort(right)
-        i = j = 0
-        k = 0
+# merge
+        i = j = 0 # left index and right index
+        k = 0 # merged index
         while i < len(left) and j < len(right):
             if left[i] <= right[j]:
                 listToSort[k] = left[i]
