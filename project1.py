@@ -89,8 +89,8 @@ MergeSort
 The function is the implementation of the Merge sorting algorithm.
 The function does the divide and conquer algorithm by breaking down problem into multiple subproblems
 recursively until they are sorted and then combined to solve original problem.
-Inputs: listToSort 
-Outputs:listToSort 
+Inputs: listToSort (a list of numbers)
+Outputs:listToSort (a list of sorted numbers)
 
 """
 def MergeSort(listToSort):
@@ -131,15 +131,20 @@ def MergeSort(listToSort):
 """
 QuickSort
 
-The function is the implement 
+The function is the implementation of the Quicksort algorithm.
+The function chooses the pivot element and store elements less than (greater than) the pivot in the left
+subarray (right subarray). Then call quicksort recursively on the left and right subarraies.
+Inputs: listToSort (a list of numbers)
+Outputs:listToSort (a list of sorted numbers)
 
 Sort a list with the call QuickSort(listToSort),
 or additionally specify i and j.
 """
 
-
+# defines partition function
 def partition(listToSort, l, r, pivot):
     while l <= r - 1:
+#compares left/right elements with pivot and move the index
         while listToSort[l] < pivot and l <= r - 1:
             l += 1
         while listToSort[r - 1] > pivot and l <= r - 1:
@@ -159,8 +164,11 @@ def QuickSort(listToSort, i=0, j=None):
     else:
         l = i
         r = j
+#set pivot equals to the middle
         pivot = listToSort[(l + r) // 2]
+#use the partition function
         i, j = partition(listToSort, l, r, pivot)
+#do quicksort recusively 
     QuickSort(listToSort, i, r)
     QuickSort(listToSort, l, j)
     return listToSort
