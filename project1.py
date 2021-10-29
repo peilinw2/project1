@@ -94,6 +94,7 @@ Outputs:listToSort
 
 """
 def MergeSort(listToSort):
+# if the list size is greater than 1, find the middle place and separate the list into half.
     if len(listToSort) > 1:
         mid = len(listToSort)//2
         left = listToSort[:mid]
@@ -105,6 +106,7 @@ def MergeSort(listToSort):
         i = j = 0 # left index and right index
         k = 0 # merged index
         while i < len(left) and j < len(right):
+#compare elemenets in left array and right array, put the small number into the sorted list.
             if left[i] <= right[j]:
                 listToSort[k] = left[i]
                 i += 1
@@ -113,6 +115,7 @@ def MergeSort(listToSort):
                 listToSort[k] = right[j]
                 j += 1
                 k += 1
+#copy remaining elements from left or right to sorted list.
         while i < len(left):
             listToSort[k] = left[i]
             i += 1
@@ -127,6 +130,8 @@ def MergeSort(listToSort):
 
 """
 QuickSort
+
+The function is the implement 
 
 Sort a list with the call QuickSort(listToSort),
 or additionally specify i and j.
